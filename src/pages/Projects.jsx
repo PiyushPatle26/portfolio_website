@@ -44,9 +44,9 @@ const projects = [
         id: '03',
         categories: ['kernel', 'opensource'],
         catText: '// Linux Kernel · ALSA · BeagleBoard.org',
-        badge: 'Open Source',
+        badge: 'Ongoing — LFX Mentorship',
         title: 'ALSA Codec Driver — BeagleBoard BELA',
-        summary: "Adding a codec driver for BeagleBoard's BELA audio platform to the Linux ALSA subsystem. Upstream kernel driver work — ASoC framework, DAPM widgets, device tree bindings, audio codec integration.",
+        summary: "Adding a codec driver for BeagleBoard's BELA audio platform to the Linux ALSA subsystem — currently ongoing as part of the LFX Kernel Mentorship Program. Upstream kernel driver work: ASoC framework, DAPM widgets, device tree bindings, audio codec integration.",
         body: (
             <>
                 <p className="m-0 mb-[18px]">BeagleBoard's BELA is a real-time audio platform used in music and research. It needed a proper upstream Linux codec driver — something written to the quality bar the kernel mailing list actually accepts. That meant working through the ASoC framework: codec registration, DAPM power widget graphs, mixer controls, and device tree bindings for hardware description.</p>
@@ -81,14 +81,17 @@ const projects = [
         categories: ['arm'],
         catText: '// Embedded · Competition · SIH 2025',
         title: 'Smart India Hackathon 2025',
-        summary: 'Smart India Hackathon 2025 — solving a real government problem statement in embedded systems. Hardware selection, firmware from scratch, prototype integration, and live demo. Real deadlines, real pressure, actually shipping something that works.',
+        catText: '// Computer Vision · ML · SIH 2025',
+        title: 'Smart India Hackathon 2025 — Sand Grain Analysis',
+        summary: 'A sand grain characterisation system built for SIH 2025. Given a photo of a sand sample with an ArUco calibration marker, it detects individual grains, measures sizes in mm, computes D10/D50/D90 and sedimentological statistics, predicts beach type via ML, and presents results through a React web interface.',
         body: (
             <>
-                <p className="m-0 mb-[18px]">SIH is one of the bigger national hackathons — teams tackle real problem statements from government ministries and industry. Our problem was in embedded systems. We picked hardware, wrote firmware, built the prototype, and had it working in front of the panel in a compressed timeframe.</p>
-                <p className="m-0">The value here isn't just the technical work — it's doing engineering under pressure with unclear specs and changing requirements. That's most of what industry actually looks like.</p>
+                <p className="m-0 mb-[18px]">The system has three subsystems working end-to-end. The <strong className="text-text font-normal">image analysis pipeline</strong> detects individual grains using the ArUco marker for scale calibration, measures grain dimensions in millimetres, and computes sedimentological statistics — D10, D50, D90, coefficient of uniformity (Cu), and coefficient of curvature (Cc).</p>
+                <p className="m-0 mb-[18px]">The <strong className="text-text font-normal">ML pipeline</strong> takes the same image and predicts beach type (fine / medium / coarse) and median grain size (D50) from a trained model. The <strong className="text-text font-normal">React web frontend</strong> ties it together — upload an image, get a full sedimentological report back. Real problem statement, real government client, working demo under pressure.
+                </p>
             </>
         ),
-        tags: ['C', 'Embedded', 'Firmware', 'Prototyping'],
+        tags: ['Python', 'OpenCV', 'ML', 'React', 'ArUco', 'Computer Vision', 'Sedimentology'],
         links: [
             { text: '↗ Source Code (GitHub)', href: 'https://github.com/PiyushPatle26/SIH-2025', type: 'primary' }
         ]
@@ -96,16 +99,16 @@ const projects = [
     {
         id: '06',
         categories: ['arm'],
-        catText: '// ARM · Embedded · Mentor',
+        catText: '// STM32 · Embedded · Mentor',
         title: 'Handheld Gaming Console — Mentored',
-        summary: 'Mentored a team of junior engineers building a handheld gaming console from scratch — display drivers, input handling, audio, and game logic on constrained ARM hardware. Reviewed code, helped with architecture decisions, and tried to stop them from making the same mistakes I made in first year.',
+        summary: 'Mentored a junior team at VJTI building a handheld gaming console on STM32 using the HAL framework — LCD display, IMU, joystick, DFPlayer Mini audio, and game logic. My role was reviewing code, guiding architecture decisions, and debugging the harder hardware issues.',
         body: (
             <>
-                <p className="m-0 mb-[18px]">Part of my broader work maintaining college embedded projects at VJTI — including Pixels SRA (OpenCV) and WALLE SRA (ESP32). The gaming console was a junior team's project. They were building it from scratch: display driver, joystick input, buzzer audio, and Tetris running on it.</p>
-                <p className="m-0">My role was reviewing PRs, doing architecture discussions, helping debug the gnarlier hardware issues, and teaching real-time systems basics. Explaining something you know well to someone who doesn't is one of the better ways to find out you don't actually know it as well as you thought.</p>
+                <p className="m-0 mb-[18px]">The team built the console from scratch on an STM32 microcontroller using STM32 HAL — driving an LCD, reading joystick and button input, integrating an IMU, and running game logic on constrained hardware. They also used a DFPlayer Mini for audio and designed the power system.</p>
+                <p className="m-0">My role was mentoring: reviewing PRs, discussing architecture, helping debug the gnarlier hardware issues, and teaching real-time systems basics. I wasn't writing the code — they were. Explaining something you know well to someone who doesn't is one of the better ways to find out you don't actually know it as well as you thought.</p>
             </>
         ),
-        tags: ['C', 'ARM', 'Embedded', 'Display Driver', 'Real-Time', 'Mentoring'],
+        tags: ['C', 'STM32', 'STM32 HAL', 'LCD', 'IMU', 'Embedded', 'Mentoring'],
         links: [
             { text: '↗ Source Code (GitHub)', href: 'https://github.com/PiyushPatle26/Handheld-Gaming-Console', type: 'primary' }
         ]
@@ -113,16 +116,16 @@ const projects = [
     {
         id: '07',
         categories: ['arm'],
-        catText: '// ARM · Embedded · Firmware',
+        catText: '// ESP32 · Embedded · Firmware',
         title: 'Counter Clock',
-        summary: 'A hardware counter and clock on an ARM microcontroller. Custom timer configuration, interrupt-driven counting, real-time display updates. All bare-metal, no HAL. The kind of small project that makes you understand exactly how hardware timers work.',
+        summary: 'A unique mechanical digital clock using 28 micro servos to physically flip 7-segment display segments, built on ESP32 with the ESP-IDF framework. Precise servo PWM control, accurate timekeeping, and optimised power management for silent operation.',
         body: (
             <>
-                <p className="m-0 mb-[18px]">Built a hardware counter and clock — configuring ARM hardware timers for precise timekeeping, writing ISRs to count events, and driving a display with real-time updates. Written in bare-metal C without HAL abstraction because I wanted to actually understand what was happening at the register level.</p>
-                <p className="m-0">Small project, clear scope. The kind of thing that teaches you more about timer peripheral configuration than any datasheet reading alone.</p>
+                <p className="m-0 mb-[18px]">Each of the 4 digits is a mechanical 7-segment display made from 7 micro servos — 28 total — that physically flip to form digits. The result is a hybrid digital-analog visual effect that's hard to describe and oddly satisfying to watch. Built on ESP32 using the ESP-IDF framework, not Arduino.</p>
+                <p className="m-0">The interesting engineering is in the servo control: 28 servos all need precise, coordinated PWM signals timed to flip digits without mechanical noise or jitter. Added sleep modes between updates for energy efficiency. Small project, clear constraints, required thinking carefully about timing and resource management.</p>
             </>
         ),
-        tags: ['C', 'ARM', 'Hardware Timers', 'ISR', 'Bare-metal', 'Display'],
+        tags: ['C', 'ESP32', 'ESP-IDF', 'Servo Control', 'PWM', 'Firmware'],
         links: [
             { text: '↗ Source Code (GitHub)', href: 'https://github.com/PiyushPatle26/Counter-Clock', type: 'primary' }
         ]

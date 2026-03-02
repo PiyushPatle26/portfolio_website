@@ -61,13 +61,13 @@ export default function MusicPlayer() {
     return (
         <>
             <audio ref={audioRef} loop preload="auto">
-                <source src="/music.mp3" type="audio/mpeg" />
+                <source src={`${import.meta.env.BASE_URL}music.mp3`} type="audio/mpeg" />
             </audio>
             <button
                 onClick={toggleMusic}
-                className={`fixed bottom-7 right-12 z-[2000] text-[9px] tracking-[0.3em] uppercase bg-transparent border px-3.5 py-2 transition-all duration-200 cursor-none
+                className={`fixed bottom-16 right-12 z-[2000] text-[9px] tracking-[0.3em] uppercase bg-transparent border px-3.5 py-2 transition-all duration-200 cursor-none
           ${musicOn ? 'text-amber border-amber' : 'text-muted border-border hover:text-amber hover:border-amber'}
-          max-md:right-6 max-md:bottom-5
+          max-md:right-6 max-md:bottom-14
         `}
             >
                 {musicOn ? '[ music: on ]' : '[ click to play ]'}
