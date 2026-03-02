@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export default function Footer({ bigText }) {
     return (
         <>
@@ -11,10 +13,11 @@ export default function Footer({ bigText }) {
                     </p>
                 ) : (
                     <p className="text-[10px] text-muted tracking-[0.15em] m-0">
-                        <a href="/" className="text-muted no-underline tracking-[0.15em] hover:text-amber transition-colors">← Back to Home</a>
+                        <Link to="/" className="text-muted no-underline tracking-[0.15em] hover:text-amber transition-colors">← Back to Home</Link>
                     </p>
                 )}
             </footer>
         </>
     );
 }
+

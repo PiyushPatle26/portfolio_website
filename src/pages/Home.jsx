@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import FadeIn from '../components/FadeIn';
 import Footer from '../components/Footer';
 
@@ -32,15 +33,15 @@ export default function Home() {
                             <span className="text-[10px] tracking-[0.18em] uppercase py-1 px-3 border border-amber-dim text-amber">Mumbai</span>
                         </div>
                         <div className="mt-9 flex gap-5 items-center opacity-0 translate-y-4 animate-[fadeUp_0.6s_1.7s_forwards]">
-                            <a href="/projects" className="inline-block py-[13px] px-7 border border-amber bg-amber text-bg font-ibm text-[11px] tracking-[0.25em] uppercase no-underline transition-all duration-200 hover:bg-transparent hover:text-amber hover:shadow-[0_0_20px_rgba(245,158,11,0.25)]">See the work</a>
-                            <a href="/Resume_Piyush_Patle%20(1).pdf" target="_blank" rel="noreferrer" className="inline-block py-[13px] px-7 border border-amber bg-transparent text-amber font-ibm text-[11px] tracking-[0.25em] uppercase no-underline transition-all duration-200 hover:bg-transparent hover:text-amber hover:shadow-[0_0_20px_rgba(245,158,11,0.25)]">Resume ↗</a>
+                            <Link to="/projects" className="inline-block py-[13px] px-7 border border-amber bg-amber text-bg font-ibm text-[11px] tracking-[0.25em] uppercase no-underline transition-all duration-200 hover:bg-transparent hover:text-amber hover:shadow-[0_0_20px_rgba(245,158,11,0.25)]">See the work</Link>
+                            <a href={`${import.meta.env.BASE_URL}Resume_Piyush_Patle (1).pdf`} target="_blank" rel="noreferrer" className="inline-block py-[13px] px-7 border border-amber bg-transparent text-amber font-ibm text-[11px] tracking-[0.25em] uppercase no-underline transition-all duration-200 hover:bg-transparent hover:text-amber hover:shadow-[0_0_20px_rgba(245,158,11,0.25)]">Resume ↗</a>
                             <a href="#contact" className="text-[11px] tracking-[0.25em] uppercase text-muted no-underline transition-colors duration-200 hover:text-text">// say hi →</a>
                         </div>
                     </div>
                     <div className="opacity-0 translate-y-6 animate-[fadeUp_0.7s_1.4s_forwards] shrink-0 max-md:order-last max-md:mx-auto">
                         <div className="relative w-[380px] h-[480px] max-sm:w-[200px] max-sm:h-[260px] group">
                             <div className="absolute inset-3 -right-3 -bottom-3 border border-amber-dim z-0 transition-transform duration-300 group-hover:translate-x-1 group-hover:translate-y-1"></div>
-                            <img src="/Screenshot from 2026-03-02 17-50-20.png" alt="Piyush Patle" className="absolute inset-0 w-full h-full object-cover object-top z-[2] grayscale-[15%] contrast-105 transition-all duration-300 border border-border group-hover:grayscale-0 group-hover:contrast-100" />
+                            <img src={`${import.meta.env.BASE_URL}Screenshot from 2026-03-02 17-50-20.png`} alt="Piyush Patle" className="absolute inset-0 w-full h-full object-cover object-top z-[2] grayscale-[15%] contrast-105 transition-all duration-300 border border-border group-hover:grayscale-0 group-hover:contrast-100" />
                         </div>
                         <p className="mt-3 text-[10px] tracking-[0.3em] text-muted text-center uppercase m-0">// piyush.patle · mumbai</p>
                     </div>
@@ -116,7 +117,7 @@ export default function Home() {
                     </FadeIn>
                     <FadeIn>
                         <div className="grid grid-cols-2 gap-[2px] bg-border max-md:grid-cols-1">
-                            <a href="/projects" className="bg-bg p-11 relative overflow-hidden no-underline text-inherit transition-colors duration-300 hover:bg-bg2 block group">
+                            <Link to="/projects" className="bg-bg p-11 relative overflow-hidden no-underline text-inherit transition-colors duration-300 hover:bg-bg2 block group">
                                 <div className="font-bebas text-[72px] text-border absolute top-3 right-5 leading-none pointer-events-none transition-colors duration-300 group-hover:text-[rgba(245,158,11,0.07)]">01</div>
                                 <div className="text-[10px] tracking-[0.3em] uppercase text-amber mb-[18px]">// Linux Kernel · Research · CDAC</div>
                                 <div className="font-bebas text-[32px] tracking-[0.05em] mb-3.5 leading-[1.1]">Lustre on Linux 6.12</div>
@@ -127,8 +128,8 @@ export default function Home() {
                                     ))}
                                 </div>
                                 <span className="text-[10px] tracking-[0.25em] uppercase text-amber flex items-center gap-2 transition-all duration-200 group-hover:gap-3.5">View all projects →</span>
-                            </a>
-                            <a href="/projects" className="bg-bg p-11 relative overflow-hidden no-underline text-inherit transition-colors duration-300 hover:bg-bg2 block group">
+                            </Link>
+                            <Link to="/projects" className="bg-bg p-11 relative overflow-hidden no-underline text-inherit transition-colors duration-300 hover:bg-bg2 block group">
                                 <div className="font-bebas text-[72px] text-border absolute top-3 right-5 leading-none pointer-events-none transition-colors duration-300 group-hover:text-[rgba(245,158,11,0.07)]">02</div>
                                 <div className="text-[10px] tracking-[0.3em] uppercase text-amber mb-[18px]">// Linux Kernel · Debug Tools</div>
                                 <div className="font-bebas text-[32px] tracking-[0.05em] mb-3.5 leading-[1.1]">Boot Autopsy</div>
@@ -139,7 +140,7 @@ export default function Home() {
                                     ))}
                                 </div>
                                 <span className="text-[10px] tracking-[0.25em] uppercase text-amber flex items-center gap-2 transition-all duration-200 group-hover:gap-3.5">View all projects →</span>
-                            </a>
+                            </Link>
                         </div>
                     </FadeIn>
                     <FadeIn>
@@ -160,13 +161,13 @@ export default function Home() {
                     </FadeIn>
                     <FadeIn>
                         <div className="grid grid-cols-1 gap-[2px] bg-border">
-                            <a href="/blog" className="bg-bg p-11 relative overflow-hidden no-underline text-inherit transition-colors duration-300 hover:bg-bg2 block group">
+                            <Link to="/blog" className="bg-bg p-11 relative overflow-hidden no-underline text-inherit transition-colors duration-300 hover:bg-bg2 block group">
                                 <div className="font-bebas text-[72px] text-border absolute top-3 right-5 leading-none pointer-events-none transition-colors duration-300 group-hover:text-[rgba(245,158,11,0.07)]">▶</div>
                                 <div className="text-[10px] tracking-[0.3em] uppercase text-amber mb-[18px]">// Research · HPC · Linux</div>
                                 <div className="font-bebas text-[32px] tracking-[0.05em] mb-3.5 leading-[1.1] max-w-[85%]">Porting Lustre to Linux 6.12 with RISC-V Support</div>
                                 <div className="text-[15px] leading-[1.9] text-muted mb-6">The full story from my CDAC internship — why Lustre breaks on a new kernel, what VFS changes actually mean, how we got a RISC-V cluster running, and what it's like to see your name in the ACM Digital Library.</div>
                                 <span className="text-[10px] tracking-[0.25em] uppercase text-amber flex items-center gap-2 transition-all duration-200 group-hover:gap-3.5">Read article →</span>
-                            </a>
+                            </Link>
                         </div>
                     </FadeIn>
                 </div>
