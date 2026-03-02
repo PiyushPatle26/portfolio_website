@@ -105,78 +105,11 @@ export default function Home() {
                 </FadeIn>
             </section>
 
-            <section id="work" className="max-w-full px-12 pb-[110px] pt-0 max-md:px-6 max-md:pb-20">
-                <div className="max-w-[1200px] mx-auto">
-                    <FadeIn>
-                        <p className="text-[10px] tracking-[0.5em] uppercase text-amber mb-12 flex items-center gap-4 after:content-[''] after:flex-1 after:h-[1px] after:bg-border">02 — Featured Work</p>
-                    </FadeIn>
-                    <FadeIn>
-                        <h2 className="font-bebas text-[clamp(36px,4.5vw,64px)] leading-none tracking-[0.03em] mb-12 mt-0">
-                            Things that <em className="not-italic text-amber">actually</em><br />run on hardware
-                        </h2>
-                    </FadeIn>
-                    <FadeIn>
-                        <div className="grid grid-cols-2 gap-[2px] bg-border max-md:grid-cols-1">
-                            <Link to="/projects" className="bg-bg p-11 relative overflow-hidden no-underline text-inherit transition-colors duration-300 hover:bg-bg2 block group">
-                                <div className="font-bebas text-[72px] text-border absolute top-3 right-5 leading-none pointer-events-none transition-colors duration-300 group-hover:text-[rgba(245,158,11,0.07)]">01</div>
-                                <div className="text-[10px] tracking-[0.3em] uppercase text-amber mb-[18px]">// Linux Kernel · Research · CDAC</div>
-                                <div className="font-bebas text-[32px] tracking-[0.05em] mb-3.5 leading-[1.1]">Lustre on Linux 6.12</div>
-                                <div className="text-[15px] leading-[1.9] text-muted mb-6">Four months inside VFS and ext4 at CDAC Pune, porting Lustre to Linux 6.12 on a RISC-V cluster. Fixed real bugs, shipped real patches, ended up at HPC Asia 2026 with an ACM paper.</div>
-                                <div className="flex flex-wrap gap-2 mb-6">
-                                    {['C', 'Linux Kernel', 'RISC-V', 'VFS'].map(tag => (
-                                        <span key={tag} className="text-[9px] tracking-[0.2em] uppercase py-1 px-2.5 border border-border text-muted transition-colors duration-200 group-hover:border-amber-dim group-hover:text-text">{tag}</span>
-                                    ))}
-                                </div>
-                                <span className="text-[10px] tracking-[0.25em] uppercase text-amber flex items-center gap-2 transition-all duration-200 group-hover:gap-3.5">View all projects →</span>
-                            </Link>
-                            <Link to="/projects" className="bg-bg p-11 relative overflow-hidden no-underline text-inherit transition-colors duration-300 hover:bg-bg2 block group">
-                                <div className="font-bebas text-[72px] text-border absolute top-3 right-5 leading-none pointer-events-none transition-colors duration-300 group-hover:text-[rgba(245,158,11,0.07)]">02</div>
-                                <div className="text-[10px] tracking-[0.3em] uppercase text-amber mb-[18px]">// Linux Kernel · Debug Tools</div>
-                                <div className="font-bebas text-[32px] tracking-[0.05em] mb-3.5 leading-[1.1]">Boot Autopsy</div>
-                                <div className="text-[15px] leading-[1.9] text-muted mb-6">Boot hangs are miserable. No dmesg, no SSH, no idea what happened. So I built a kernel module that keeps a ring buffer of events and dumps everything on panic. No rebuilds needed.</div>
-                                <div className="flex flex-wrap gap-2 mb-6">
-                                    {['C', 'Linux Kernel', 'GDB'].map(tag => (
-                                        <span key={tag} className="text-[9px] tracking-[0.2em] uppercase py-1 px-2.5 border border-border text-muted transition-colors duration-200 group-hover:border-amber-dim group-hover:text-text">{tag}</span>
-                                    ))}
-                                </div>
-                                <span className="text-[10px] tracking-[0.25em] uppercase text-amber flex items-center gap-2 transition-all duration-200 group-hover:gap-3.5">View all projects →</span>
-                            </Link>
-                        </div>
-                    </FadeIn>
-                    <FadeIn>
-                        <div className="border-l-[3px] border-amber py-9 px-11 bg-bg2 mt-[72px]">
-                            <p className="font-bebas text-[clamp(26px,3.5vw,48px)] leading-[1.1] tracking-[0.03em] mb-5 mt-0">
-                                Good firmware is <em className="not-italic text-amber">honest.</em><br />It does exactly what you told it to.<br />That's usually the problem.
-                            </p>
-                            <p className="text-[10px] tracking-[0.25em] uppercase text-muted m-0">— me &nbsp;&nbsp;// after the fourth watchdog reset</p>
-                        </div>
-                    </FadeIn>
-                </div>
-            </section>
-
-            <section className="max-w-full px-12 pt-0 pb-[110px] max-md:px-6">
-                <div className="max-w-[1200px] mx-auto">
-                    <FadeIn>
-                        <p className="text-[10px] tracking-[0.5em] uppercase text-amber mb-12 flex items-center gap-4 after:content-[''] after:flex-1 after:h-[1px] after:bg-border">03 — Latest Writing</p>
-                    </FadeIn>
-                    <FadeIn>
-                        <div className="grid grid-cols-1 gap-[2px] bg-border">
-                            <Link to="/blog" className="bg-bg p-11 relative overflow-hidden no-underline text-inherit transition-colors duration-300 hover:bg-bg2 block group">
-                                <div className="font-bebas text-[72px] text-border absolute top-3 right-5 leading-none pointer-events-none transition-colors duration-300 group-hover:text-[rgba(245,158,11,0.07)]">▶</div>
-                                <div className="text-[10px] tracking-[0.3em] uppercase text-amber mb-[18px]">// Research · HPC · Linux</div>
-                                <div className="font-bebas text-[32px] tracking-[0.05em] mb-3.5 leading-[1.1] max-w-[85%]">Porting Lustre to Linux 6.12 with RISC-V Support</div>
-                                <div className="text-[15px] leading-[1.9] text-muted mb-6">The full story from my CDAC internship — why Lustre breaks on a new kernel, what VFS changes actually mean, how we got a RISC-V cluster running, and what it's like to see your name in the ACM Digital Library.</div>
-                                <span className="text-[10px] tracking-[0.25em] uppercase text-amber flex items-center gap-2 transition-all duration-200 group-hover:gap-3.5">Read article →</span>
-                            </Link>
-                        </div>
-                    </FadeIn>
-                </div>
-            </section>
 
             <section id="contact" className="bg-bg2 max-w-full py-[110px] px-12 border-t border-border text-center max-md:px-6 max-md:py-20">
                 <div className="max-w-[760px] mx-auto">
                     <FadeIn>
-                        <p className="text-[10px] tracking-[0.5em] uppercase text-amber mb-12 flex items-center justify-center gap-4 after:content-[''] after:flex-1 after:h-[1px] after:bg-border before:content-[''] before:flex-1 before:h-[1px] before:bg-border">04 — Contact</p>
+                        <p className="text-[10px] tracking-[0.5em] uppercase text-amber mb-12 flex items-center justify-center gap-4 after:content-[''] after:flex-1 after:h-[1px] after:bg-border before:content-[''] before:flex-1 before:h-[1px] before:bg-border">02 — Contact</p>
                     </FadeIn>
                     <FadeIn>
                         <h2 className="font-bebas text-[clamp(44px,8vw,110px)] leading-[0.9] tracking-[0.02em] mb-7 mt-0">
